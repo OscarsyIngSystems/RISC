@@ -56,7 +56,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #b06352 !important;
+  background-image: url("/assets/img/banderaFr.jpg") !important;
+  background-size: contain;
+  background-repeat: round;
+  background-position: center;
+  // background-color: #E6C6BC !important;
   align-items: center;
 }
 
@@ -64,7 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #b06352 !important;
+  background-color: #e6c6bc !important;
   align-items: center;
 }
 
@@ -216,4 +220,29 @@ body {
 
 .img:hover {
   transform: scale(1.02);
+}
+
+.h-90 {
+  height: 90% !important;
+}
+
+.marco {
+  border: 4px double #b06352;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Efecto de texto con contorno doble */
+  color: #0055a4; /* Color azul de la bandera francesa */
+  text-shadow: 3px 3px 0 #ef4135,
+    /* Sombra roja para contraste */ -1px -1px 0 #ffffff,
+    /* Sombra blanca para contorno */ 1px -1px 0 #ffffff, -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff;
 }
