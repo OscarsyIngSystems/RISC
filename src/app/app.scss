@@ -9,11 +9,14 @@ body {
   perspective: 1000px;
   font: 16px/1.4 sans-serif;
   overflow: hidden;
-  background-color: #232425;
+}
+
+p {
+  word-wrap: break-word; /* o también word-break: break-word; */
+  font-size: clamp(10px, 2vw, 13px);
 }
 
 .container-book {
-  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,6 +238,12 @@ body {
 
 .w-80 {
   width: 80% !important;
+}
+.w-70 {
+  width: 70% !important;
+}
+.w-63 {
+  width: 63% !important;
 }
 
 .minH-fill-available {
