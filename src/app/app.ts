@@ -19,6 +19,8 @@ export class App implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('playPauseBtn') playPauseBtn!: ElementRef<HTMLButtonElement>;
   @ViewChild('autoplayOverlay') autoplayOverlay!: ElementRef<HTMLDivElement>;
   @ViewChild('autoplayButton') autoplayButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('hoverVideo') hoverVideo!: ElementRef<HTMLVideoElement>;
+  isPlayingg = false;
 
   private audioInitialized = false;
   private audioContext: AudioContext | null = null;
@@ -277,4 +279,24 @@ export class App implements AfterViewInit, OnInit, OnDestroy {
       this.playAudio();
     }
   }
+
+  hoverPlay() {
+    const videoEl = this.hoverVideo?.nativeElement;
+    if (videoEl) {
+      videoEl.play();
+      this.isPlayingg = true;
+      videoEl.classList.add('playing');
+    }
+  }
+  hoverStop() {
+    const videoEl = this.hoverVideo?.nativeElement;
+    if (videoEl) {
+      videoEl.pause();
+      this.isPlayingg = false;
+      videoEl.currentTime = 0;
+      videoEl.classList.remove('playing');
+    }
+  }
+
+
 }
