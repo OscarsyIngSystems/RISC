@@ -315,10 +315,43 @@ p {
   transition: opacity 0.3s ease;
   opacity: 1;
 }
+.video-containerFin {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  border: 2px solid #b06352;
+  // position: relative;
+  // display: inline-block; /* o block según tu diseño */
+  cursor: pointer;
+}
+.video-containerFin::after {
+  content: "▶"; /* Símbolo de play */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: rgb(255 255 255);
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
 .video-container.playing::after {
   opacity: 0;
 }
+.video-containerFin.playing::after {
+  opacity: 0;
+}
 #hoverVideo {
+  object-fit: cover;
+  width: 100%;
+}
+#hoverVideoFin {
   object-fit: cover;
   width: 100%;
 }

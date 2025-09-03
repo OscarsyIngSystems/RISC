@@ -700,6 +700,30 @@
         </div>
       </div>
     </div>
+    <div class="page">
+      <div class="front">
+        <div class="content-img w-100 h-100 my-3">
+          <img class="img img-fill" src="assets/img/001.jpeg" alt="Img 1" />
+        </div>
+      </div>
+      <div class="back">
+        <div
+          class="d-flex flex-column h-100 justify-content-center align-content-center"
+        >
+          <div
+            class="video-containerFin"
+            (mouseover)="hoverPlayFin()"
+            (mouseleave)="hoverStopFin()"
+            [class.playing]="isPlayingg"
+          >
+            <video id="hoverVideoFin" #hoverVideoFin muted loop playsinline>
+              <source src="assets/img/V13.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- PAGINA FINAL -->
     <div class="page">

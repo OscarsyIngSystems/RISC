@@ -20,6 +20,7 @@ export class App implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('autoplayOverlay') autoplayOverlay!: ElementRef<HTMLDivElement>;
   @ViewChild('autoplayButton') autoplayButton!: ElementRef<HTMLButtonElement>;
   @ViewChild('hoverVideo') hoverVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('hoverVideoFin') hoverVideoFin!: ElementRef<HTMLVideoElement>;
   isPlayingg = false;
 
   private audioInitialized = false;
@@ -298,5 +299,22 @@ export class App implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
+  hoverPlayFin() {
+    const videoEl = this.hoverVideoFin?.nativeElement;
+    if (videoEl) {
+      videoEl.play();
+      this.isPlayingg = true;
+      videoEl.classList.add('playing');
+    }
+  }
+  hoverStopFin() {
+    const videoEl = this.hoverVideoFin?.nativeElement;
+    if (videoEl) {
+      videoEl.pause();
+      this.isPlayingg = false;
+      videoEl.currentTime = 0;
+      videoEl.classList.remove('playing');
+    }
+  }
 
 }
